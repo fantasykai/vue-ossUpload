@@ -10,6 +10,10 @@
     <div v-show="uploadForm.uploadRes"
          v-text="uploadForm.content.path">
     </div>
+    <div>
+      <img v-if="uploadForm.uploadRes"
+           :src="this.imgSrc">
+    </div>
   </div>
 </template>
 
@@ -25,20 +29,21 @@
         ossClient: Object,
         uploadForm: {
           id: 'imgFile',
-          inputName: '上传图片',
+          inputName: '上传图片',// 自定义
           content: {
             path: '',
           },
           upload: {
-            path: 'chat/c2c',
+            path: 'img/test/',// 自定义路径
           },
           uploadRes: false,
         },
+        imgSrc: ''
       }
     },
     methods: {
       //初始化OSS 权限, 建议后台提供获取oss临时权限的接口
-      initOSSAuth(){
+      initOSSAuth() {
 
         let ossSts = JSON.parse(localStorage.getItem('ossSts'));
 
@@ -53,6 +58,28 @@
           endpoint: '',
         });
       },
+      showUploadContent() {
+        if (this.uploadForm.content.path) {
+
+          let path = this.uploadForm.content.path;
+
+          var result = this.ossClient.signatureUrl(path, {
+            response: {
+              // 'content-disposition': 'attachment; filename="' + filename + '"'
+              'Content-Type': 'image/jpeg'
+            }
+          });
+          this.imgSrc = result;
+        }
+      }
+    },
+    watch: {
+      'uploadForm.content.path' (val, oldVal) {
+//                console.log('new: %s, old: %s', val, oldVal)
+        if ('' !== val) {
+          this.showUploadContent();
+        }
+      }
     },
     mounted() {
       this.initOSSAuth();
