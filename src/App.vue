@@ -18,11 +18,11 @@
 </template>
 
 <script>
-  import UploadAliOSS from './UploadAliOSS.vue';
+  import VueUploadAliOSS from './UploadAliOSS.vue';
   export default {
     name: 'app',
     components: {
-      'upload-ali-oss': UploadAliOSS
+      'upload-ali-oss': VueUploadAliOSS
     },
     data() {
       return {
