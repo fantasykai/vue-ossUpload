@@ -4,6 +4,7 @@
   "description": "support ali-oss uplaod func",
   "author": "kai.fanatasy<kai.fantasy@gmail.com>",
   "private": false,
+  "license": "MIT",
   "main": "dist/vue-alioss-upload.min.js",
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -12,6 +13,10 @@
   },
   "dependencies": {
     "vue": "^2.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fantasykai/vue-ossUpload.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
