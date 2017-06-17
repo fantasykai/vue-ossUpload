@@ -1,3 +1,6 @@
+
+- [NPM](https://www.npmjs.com/package/vue-oss-upload/)
+
 # vue-oss-upload
 
 > support ali-oss uplaod func
