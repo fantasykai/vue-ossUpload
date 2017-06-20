@@ -12,13 +12,17 @@
 
 ### 需要依赖阿里云的oss的SDK,可以在index.html中引入
 
-<script type="text/javascript" src="https://gosspublic.alicdn.com/aliyun-oss-sdk.min.js"></script>
+`<script type="text/javascript" src="https://gosspublic.alicdn.com/aliyun-oss-sdk.min.js"></script>`
 
 ### 组件依赖vue2.3以上的版本
 
 vue2.3 重新引入了 .sync 修饰符，但是这次它只是作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 v-on 侦听器。
 
 [.sync 修饰符](https://cn.vuejs.org/v2/guide/components.html#counter-event-example)
+
+### 使用组件时，需要导入Css样式。自己不擅长写样式，写的比较挫，希望可以被改进，哈哈
+
+### TODO: 上传的进度，等尚未实现，只有最终上传结果
 
 ## Use Setup
 
