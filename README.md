@@ -12,7 +12,7 @@
 
 ### 需要依赖阿里云的oss的SDK,可以在index.html中引入
 
-`<script type="text/javascript" src="https://gosspublic.alicdn.com/aliyun-oss-sdk.min.js"></script>`
+    `<script type="text/javascript" src="https://gosspublic.alicdn.com/aliyun-oss-sdk.min.js"></script>`
 
 ### 组件依赖vue2.3以上的版本
 
