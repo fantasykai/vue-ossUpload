@@ -30,6 +30,7 @@
         uploadForm: {
           id: 'imgFile',
           inputName: '上传图片',// 自定义
+          uploadFileName: '2017063010192023',// 上传文件的名称
           content: {
             path: '',
           },

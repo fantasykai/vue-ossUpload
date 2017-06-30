@@ -32,6 +32,9 @@
       inputName: {
         type: String,
       },
+      uploadFileName: {
+        type: String,
+      },
       path: {
         type: String,
       },
@@ -50,13 +53,12 @@
         const files = document.getElementById(_this.id);
         if (files.files) {
 
-          const fileLen = document.getElementById(_this.id).files
+          const fileLen = document.getElementById(_this.id).files;
           for (let i = 0; i < fileLen.length; i++) {
             const file = fileLen[i];
             const storeAs = file.name;
-            let suffix = storeAs.split(".")[1]
-
-            let storeKey = _this.content.path + '.' + suffix;
+            let suffix = storeAs.split(".")[1];
+            let storeKey = _this.content.path + _this.uploadFileName + '.' + suffix;
             _this.resultUpload = storeKey;
             _this.ossClient.multipartUpload(storeKey, file, {}).then((results) => {
               this.$emit('update:uploadRes', true);

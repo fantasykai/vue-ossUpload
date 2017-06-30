@@ -79,6 +79,7 @@ npm install vue-oss-upload --save
                             :id="uploadForm.id"
                             :ossClient="this.ossClient"
                             :inputName="uploadForm.inputName"
+                            :uploadFileName="uploadForm.uploadFileName"
                             :path="uploadForm.upload.path"
                             :uploadRes.sync="uploadForm.uploadRes"
             ></upload-ali-oss>
@@ -106,6 +107,7 @@ npm install vue-oss-upload --save
                     uploadForm: {
                         id: 'imgFile',
                         inputName: '上传图片',// 自定义
+                        uploadFileName: '2017063010192023',// 上传文件的名称
                         content: {
                             path: '',
                         },
