@@ -64,6 +64,10 @@ npm install vue-oss-upload --save
           inputName: {
             type: String,
           },
+          // 上传文件的名称
+          uploadFileName: {
+            type: String,
+          },
           // 上传到OSS的路径
           path: {
             type: String,
